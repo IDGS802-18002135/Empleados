@@ -1,0 +1,32 @@
+<div class="col">
+    <h3>Clientes</h3>
+    <hr />
+   
+    <!--Mostramos el listado de clientes utilizado  @for-->
+    <table class="table">
+    <thead>
+        <tr>
+          <th>Nombre</th>
+          <th>Correo</th>
+          <th>Fecha de Nacimiento</th>
+          <th>Número de Empleado</th>
+          <th>Teléfono</th>
+          <th>Sexo</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+    <tbody>
+     @for (empleado of empleados; track empleado.nombre){
+        <tr>
+        <td>{{ empleado.nombre }}</td>
+        <td>{{ empleado.correo }}</td>
+        <td>{{ empleado.FechaNac }}</td>
+        <td>{{ empleado.numero_empleado }}</td>
+        <td>{{ empleado.telefono }}</td>
+        <td>{{ empleado.sexo }}</td>
+        <td><button (click)="eliminarEmpleado(empleado.numero_empleado)">Eliminar</button></td>
+    </tr>
+     }
+    </tbody>
+</table>
+</div>
